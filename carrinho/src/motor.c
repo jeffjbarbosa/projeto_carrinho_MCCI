@@ -36,10 +36,11 @@ void timer0_pwm_hardware_init(){
 
 	/* WGM02, WGM01 WGM00 setados: modo PWM rápido com TOP em OCRA */
 	TIMER_0->TCCRA = SET(WGM01) | SET(WGM00) | SET(COM0B1);
-	TIMER_0->TCCRB = SET(WGM02) | SET(CS00);
+	TIMER_0->TCCRB = SET(WGM02) | SET(CS01) | SET(CS00);
+	//CLR(CS02)
 
 	/* OCRA define frequência do PWM */
-	TIMER_0->OCRA = 200;
+	TIMER_0->OCRA = 124;
 
 	/* OCRB define razão cíclica:  OCRB / OCRA */
 	TIMER_0->OCRB = 150;
@@ -59,10 +60,10 @@ void timer2_pwm_hardware_init(){
 
 	/* WGM02, WGM01 WGM00 setados: modo PWM rápido com TOP em OCRA */
 	TIMER_2->TCCRA = SET(WGM21) | SET(WGM20) | SET(COM2B1);
-	TIMER_2->TCCRB = SET(WGM22) | SET(CS00);
-
+	TIMER_2->TCCRB = SET(WGM22) | SET(CS21) | SET(CS20);
+	//CLR(CS22)
 	/* OCRA define frequência do PWM */
-	TIMER_2->OCRA = 200;
+	TIMER_2->OCRA = 249;
 
 	/* OCRB define razão cíclica:  OCRB / OCRA */
 	TIMER_2->OCRB = 150;
