@@ -17,7 +17,6 @@
 #include "../lib/adc_battery.h"
 #include "../lib/avr_usart.h"
 
-//volatile uint16_t valor_adc = 0;
 volatile uint16_t bat1=0;
 volatile uint16_t bat_med=0;
 
@@ -38,17 +37,19 @@ int main(){
 	//timer0_pwm_hardware_init();
 
 	//timer2_pwm_hardware_init();
-
 	sei();
 	//set_dutty(valor_pwm);
 	while (1){
 		//set_dutty(valor_pwm);
 		//valor_pwm+=10;
 		//_delay_ms(10);
-
+		_delay_ms(500);
 		fprintf(debug, "%d\n\r", bat1);
 		fprintf(debug, "%d\n\r", bat_med);
-		//_delay_ms(1000);
+
+		if (protect_bat(bat1, bat_med) == 1){
+			fprintf(debug, "tensao da bateria caiu!\n\r");
+		}
 	}
 
 	return 0;
@@ -68,7 +69,6 @@ ISR(ADC_vect){
 			bat_med = ADC;
 			adc_select_channel(ADC0);
 			ADC_CHANNEL = ADC0;
-			//adc_flag = 1;
 			break;
 		}
 }
