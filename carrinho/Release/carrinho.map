@@ -53,6 +53,11 @@ e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/
 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
                               e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fprintf.o) (__epilogue_restores__)
 
+Allocating common symbols
+Common symbol       size              file
+
+serial_char         0x1               ./src/main.o
+
 Memory Configuration
 
 Name             Origin             Length             Attributes
@@ -179,7 +184,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0xe42
+.text           0x0000000000000000      0xec2
  *(.vectors)
  .vectors       0x0000000000000000       0x68 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5/crtatmega328p.o
                 0x0000000000000000                __vector_default
@@ -253,12 +258,12 @@ END GROUP
                 0x00000000000000a2                __vector_4
                 0x00000000000000a2                __vector_9
                 0x00000000000000a2                __vector_2
+                0x00000000000000a2                __vector_21
                 0x00000000000000a2                __vector_15
                 0x00000000000000a2                __vector_8
                 0x00000000000000a2                __vector_14
                 0x00000000000000a2                __vector_10
                 0x00000000000000a2                __vector_16
-                0x00000000000000a2                __vector_18
  .text          0x00000000000000a6        0x0 ./src/adc_battery.o
  .text          0x00000000000000a6        0x0 ./src/avr_spi.o
  .text          0x00000000000000a6        0x0 ./src/avr_usart.o
@@ -325,189 +330,194 @@ END GROUP
  .text.USART_rx
                 0x000000000000023e        0xe ./src/avr_usart.o
                 0x000000000000023e                USART_rx
- .text.__vector_20
+ .text.__vector_18
                 0x000000000000024c        0x2 ./src/avr_usart.o
-                0x000000000000024c                __vector_20
+                0x000000000000024c                __vector_18
+ .text.__vector_20
+                0x000000000000024e        0x2 ./src/avr_usart.o
+                0x000000000000024e                __vector_20
  .text.startup.main
-                0x000000000000024e       0x94 ./src/main.o
-                0x000000000000024e                main
- .text.__vector_21
-                0x00000000000002e2       0x8a ./src/main.o
-                0x00000000000002e2                __vector_21
- .text.set_dutty
-                0x000000000000036c       0x16 ./src/motor.o
-                0x000000000000036c                set_dutty
- .text.timer0_pwm_hardware_init
-                0x0000000000000382       0x14 ./src/motor.o
-                0x0000000000000382                timer0_pwm_hardware_init
- .text.timer2_pwm_hardware_init
-                0x0000000000000396       0x18 ./src/motor.o
-                0x0000000000000396                timer2_pwm_hardware_init
+                0x0000000000000250      0x15c ./src/main.o
+                0x0000000000000250                main
+ .text.timer_pwm_init
+                0x00000000000003ac       0x1a ./src/motor.o
+                0x00000000000003ac                timer_pwm_init
+ .text.frente   0x00000000000003c6       0x14 ./src/motor.o
+                0x00000000000003c6                frente
+ .text.reh      0x00000000000003da       0x16 ./src/motor.o
+                0x00000000000003da                reh
+ .text.direita  0x00000000000003f0       0x18 ./src/motor.o
+                0x00000000000003f0                direita
+ .text.esquerda
+                0x0000000000000408       0x18 ./src/motor.o
+                0x0000000000000408                esquerda
+ .text.stop     0x0000000000000420        0xe ./src/motor.o
+                0x0000000000000420                stop
  .text.TWI_Master_Initialise
-                0x00000000000003ae       0x14 ./lib/avr_twi_master.o
-                0x00000000000003ae                TWI_Master_Initialise
+                0x000000000000042e       0x14 ./lib/avr_twi_master.o
+                0x000000000000042e                TWI_Master_Initialise
  .text.TWI_Transceiver_Busy
-                0x00000000000003c2        0x8 ./lib/avr_twi_master.o
-                0x00000000000003c2                TWI_Transceiver_Busy
+                0x0000000000000442        0x8 ./lib/avr_twi_master.o
+                0x0000000000000442                TWI_Transceiver_Busy
  .text.TWI_Get_State_Info
-                0x00000000000003ca        0xe ./lib/avr_twi_master.o
-                0x00000000000003ca                TWI_Get_State_Info
+                0x000000000000044a        0xe ./lib/avr_twi_master.o
+                0x000000000000044a                TWI_Get_State_Info
  .text.TWI_Start_Transceiver_With_Data
-                0x00000000000003d8       0x48 ./lib/avr_twi_master.o
-                0x00000000000003d8                TWI_Start_Transceiver_With_Data
+                0x0000000000000458       0x48 ./lib/avr_twi_master.o
+                0x0000000000000458                TWI_Start_Transceiver_With_Data
  .text.TWI_Start_Transceiver
-                0x0000000000000420       0x1a ./lib/avr_twi_master.o
-                0x0000000000000420                TWI_Start_Transceiver
+                0x00000000000004a0       0x1a ./lib/avr_twi_master.o
+                0x00000000000004a0                TWI_Start_Transceiver
  .text.TWI_Get_Data_From_Transceiver
-                0x000000000000043a       0x2e ./lib/avr_twi_master.o
-                0x000000000000043a                TWI_Get_Data_From_Transceiver
+                0x00000000000004ba       0x2e ./lib/avr_twi_master.o
+                0x00000000000004ba                TWI_Get_Data_From_Transceiver
  .text.__vector_24
-                0x0000000000000468       0xda ./lib/avr_twi_master.o
-                0x0000000000000468                __vector_24
+                0x00000000000004e8       0xda ./lib/avr_twi_master.o
+                0x00000000000004e8                __vector_24
  .text.libgcc.mul
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.div
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.div
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.prologue
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.builtins
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.fmul
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.fixed
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.mul
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x0000000000000542        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000005c2        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
  .text.avr-libc.fplib
-                0x0000000000000542        0xe e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
-                0x0000000000000542                __subsf3
-                0x0000000000000544                __addsf3
+                0x00000000000005c2        0xe e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                0x00000000000005c2                __subsf3
+                0x00000000000005c4                __addsf3
  .text.avr-libc.fplib
-                0x0000000000000550       0xcc e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
-                0x0000000000000572                __addsf3x
+                0x00000000000005d0       0xcc e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                0x00000000000005f2                __addsf3x
  .text.avr-libc.fplib
-                0x000000000000061c        0xa e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
-                0x000000000000061c                __nesf2
-                0x000000000000061c                __eqsf2
-                0x000000000000061c                __cmpsf2
-                0x000000000000061c                __ltsf2
-                0x000000000000061c                __lesf2
+                0x000000000000069c        0xa e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+                0x000000000000069c                __nesf2
+                0x000000000000069c                __eqsf2
+                0x000000000000069c                __cmpsf2
+                0x000000000000069c                __ltsf2
+                0x000000000000069c                __lesf2
  .text.avr-libc.fplib
-                0x0000000000000626       0x7a e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
-                0x0000000000000626                __floatunsisf
-                0x000000000000062a                __floatsisf
+                0x00000000000006a6       0x7a e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                0x00000000000006a6                __floatunsisf
+                0x00000000000006aa                __floatsisf
  .text.avr-libc.fplib
-                0x00000000000006a0       0x48 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
-                0x00000000000006a0                __fp_cmp
+                0x0000000000000720       0x48 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+                0x0000000000000720                __fp_cmp
  .text.avr-libc.fplib
-                0x00000000000006e8        0xc e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
-                0x00000000000006e8                __fp_inf
+                0x0000000000000768        0xc e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                0x0000000000000768                __fp_inf
  .text.avr-libc.fplib
-                0x00000000000006f4        0x6 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
-                0x00000000000006f4                __fp_nan
+                0x0000000000000774        0x6 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                0x0000000000000774                __fp_nan
  .text.avr-libc.fplib
-                0x00000000000006fa        0xe e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
-                0x00000000000006fa                __fp_pscA
+                0x000000000000077a        0xe e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                0x000000000000077a                __fp_pscA
  .text.avr-libc.fplib
-                0x0000000000000708        0xe e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
-                0x0000000000000708                __fp_pscB
+                0x0000000000000788        0xe e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                0x0000000000000788                __fp_pscB
  .text.avr-libc.fplib
-                0x0000000000000716       0x22 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
-                0x0000000000000716                __fp_round
+                0x0000000000000796       0x22 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                0x0000000000000796                __fp_round
  .text.avr-libc.fplib
-                0x0000000000000738       0x44 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
-                0x0000000000000738                __fp_split3
-                0x0000000000000748                __fp_splitA
+                0x00000000000007b8       0x44 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                0x00000000000007b8                __fp_split3
+                0x00000000000007c8                __fp_splitA
  .text.avr-libc.fplib
-                0x000000000000077c        0xe e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
-                0x000000000000077c                __fp_zero
-                0x000000000000077e                __fp_szero
+                0x00000000000007fc        0xe e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                0x00000000000007fc                __fp_zero
+                0x00000000000007fe                __fp_szero
  .text.avr-libc.fplib
-                0x000000000000078a        0x8 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
-                0x000000000000078a                __mulsf3
+                0x000000000000080a        0x8 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                0x000000000000080a                __mulsf3
  .text.avr-libc.fplib
-                0x0000000000000792       0xd2 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
-                0x00000000000007b0                __mulsf3x
-                0x00000000000007b6                __mulsf3_pse
+                0x0000000000000812       0xd2 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                0x0000000000000830                __mulsf3x
+                0x0000000000000836                __mulsf3_pse
  .text.avr-libc
-                0x0000000000000864       0x24 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
-                0x0000000000000864                fprintf
+                0x00000000000008e4       0x24 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
+                0x00000000000008e4                fprintf
  .text.avr-libc
-                0x0000000000000888       0x50 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fputs.o)
-                0x0000000000000888                fputs
+                0x0000000000000908       0x50 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fputs.o)
+                0x0000000000000908                fputs
  .text.avr-libc
-                0x00000000000008d8      0x3b0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
-                0x00000000000008d8                vfprintf
+                0x0000000000000958      0x3b0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                0x0000000000000958                vfprintf
  .text.avr-libc
-                0x0000000000000c88       0x16 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x0000000000000c88                strnlen_P
+                0x0000000000000d08       0x16 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x0000000000000d08                strnlen_P
  .text.avr-libc
-                0x0000000000000c9e       0x16 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x0000000000000c9e                strnlen
+                0x0000000000000d1e       0x16 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x0000000000000d1e                strnlen
  .text.avr-libc
-                0x0000000000000cb4       0x60 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x0000000000000cb4                fputc
+                0x0000000000000d34       0x60 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x0000000000000d34                fputc
  .text.avr-libc
-                0x0000000000000d14       0xbc e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x0000000000000d14                __ultoa_invert
+                0x0000000000000d94       0xbc e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x0000000000000d94                __ultoa_invert
  .text.libgcc.mul
-                0x0000000000000dd0        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000000e50        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
  .text.libgcc.div
-                0x0000000000000dd0        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
- .text.libgcc   0x0000000000000dd0        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000000e50        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
+ .text.libgcc   0x0000000000000e50        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
  .text.libgcc.prologue
-                0x0000000000000dd0       0x38 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
-                0x0000000000000dd0                __prologue_saves__
+                0x0000000000000e50       0x38 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000000e50                __prologue_saves__
  .text.libgcc.builtins
-                0x0000000000000e08        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000000e88        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
  .text.libgcc.fmul
-                0x0000000000000e08        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000000e88        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
  .text.libgcc.fixed
-                0x0000000000000e08        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000000e88        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
  .text.libgcc.mul
-                0x0000000000000e08        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
+                0x0000000000000e88        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
  .text.libgcc.div
-                0x0000000000000e08        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
- .text.libgcc   0x0000000000000e08        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
+                0x0000000000000e88        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
+ .text.libgcc   0x0000000000000e88        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
  .text.libgcc.prologue
-                0x0000000000000e08       0x36 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
-                0x0000000000000e08                __epilogue_restores__
+                0x0000000000000e88       0x36 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
+                0x0000000000000e88                __epilogue_restores__
  .text.libgcc.builtins
-                0x0000000000000e3e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
+                0x0000000000000ebe        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
  .text.libgcc.fmul
-                0x0000000000000e3e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
+                0x0000000000000ebe        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
  .text.libgcc.fixed
-                0x0000000000000e3e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
-                0x0000000000000e3e                . = ALIGN (0x2)
+                0x0000000000000ebe        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
+                0x0000000000000ebe                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000e3e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
-                0x0000000000000e3e                _exit
-                0x0000000000000e3e                exit
+ .fini9         0x0000000000000ebe        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+                0x0000000000000ebe                _exit
+                0x0000000000000ebe                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -526,17 +536,17 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000e3e        0x4 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000000000000ebe        0x4 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
  *(.hightext)
  *(.hightext*)
  *(.progmemx.*)
-                0x0000000000000e42                . = ALIGN (0x2)
+                0x0000000000000ec2                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
-                0x0000000000000e42                _etext = .
+                0x0000000000000ec2                _etext = .
 
-.data           0x0000000000800100       0x2e load address 0x0000000000000e42
+.data           0x0000000000800100       0x64 load address 0x0000000000000ec2
                 0x0000000000800100                PROVIDE (__data_start = .)
  *(.data)
  .data          0x0000000000800100        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5/crtatmega328p.o
@@ -582,75 +592,76 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.main.str1.1
-                0x000000000080010f       0x1f ./src/main.o
+                0x000000000080010f       0x55 ./src/main.o
  *(.gnu.linkonce.r*)
-                0x000000000080012e                . = ALIGN (0x2)
-                0x000000000080012e                _edata = .
-                0x000000000080012e                PROVIDE (__data_end = .)
+                0x0000000000800164                . = ALIGN (0x2)
+                0x0000000000800164                _edata = .
+                0x0000000000800164                PROVIDE (__data_end = .)
 
-.bss            0x000000000080012e        0xd
-                0x000000000080012e                PROVIDE (__bss_start = .)
+.bss            0x0000000000800164        0xb
+                0x0000000000800164                PROVIDE (__bss_start = .)
  *(.bss)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5/crtatmega328p.o
- .bss           0x000000000080012e        0x0 ./src/adc_battery.o
- .bss           0x000000000080012e        0x0 ./src/avr_spi.o
- .bss           0x000000000080012e        0x0 ./src/avr_usart.o
- .bss           0x000000000080012e        0x0 ./src/main.o
- .bss           0x000000000080012e        0x0 ./src/motor.o
- .bss           0x000000000080012e        0x0 ./lib/avr_twi_master.o
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fputs.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fputc.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
- .bss           0x000000000080012e        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5/crtatmega328p.o
+ .bss           0x0000000000800164        0x0 ./src/adc_battery.o
+ .bss           0x0000000000800164        0x0 ./src/avr_spi.o
+ .bss           0x0000000000800164        0x0 ./src/avr_usart.o
+ .bss           0x0000000000800164        0x0 ./src/main.o
+ .bss           0x0000000000800164        0x0 ./src/motor.o
+ .bss           0x0000000000800164        0x0 ./lib/avr_twi_master.o
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_exit.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_copy_data.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_cmp.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fputs.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_prologue.o)
+ .bss           0x0000000000800164        0x0 e:/softwares_programacao/eclipse/avr_gcc/avr-gcc-9.2.0-x64-mingw/bin/../lib/gcc/avr/9.2.0/avr5\libgcc.a(_epilogue.o)
  *(.bss*)
  .bss.ADC_CHANNEL
-                0x000000000080012e        0x1 ./src/adc_battery.o
- .bss.bat_med   0x000000000080012f        0x2 ./src/main.o
-                0x000000000080012f                bat_med
- .bss.bat1      0x0000000000800131        0x2 ./src/main.o
-                0x0000000000800131                bat1
+                0x0000000000800164        0x1 ./src/adc_battery.o
+ .bss.switch_controller
+                0x0000000000800165        0x1 ./src/main.o
+                0x0000000000800165                switch_controller
  .bss.ADC_CHANNEL
-                0x0000000000800133        0x1 ./src/main.o
+                0x0000000000800166        0x1 ./src/main.o
  .bss.TWI_bufPtr.1563
-                0x0000000000800134        0x1 ./lib/avr_twi_master.o
+                0x0000000000800167        0x1 ./lib/avr_twi_master.o
  .bss.TWI_statusReg
-                0x0000000000800135        0x1 ./lib/avr_twi_master.o
-                0x0000000000800135                TWI_statusReg
+                0x0000000000800168        0x1 ./lib/avr_twi_master.o
+                0x0000000000800168                TWI_statusReg
  .bss.TWI_msgSize
-                0x0000000000800136        0x1 ./lib/avr_twi_master.o
- .bss.TWI_buf   0x0000000000800137        0x4 ./lib/avr_twi_master.o
+                0x0000000000800169        0x1 ./lib/avr_twi_master.o
+ .bss.TWI_buf   0x000000000080016a        0x4 ./lib/avr_twi_master.o
  *(COMMON)
-                0x000000000080013b                PROVIDE (__bss_end = .)
-                0x0000000000000e42                __data_load_start = LOADADDR (.data)
-                0x0000000000000e70                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x000000000080016e        0x1 ./src/main.o
+                0x000000000080016e                serial_char
+                0x000000000080016f                PROVIDE (__bss_end = .)
+                0x0000000000000ec2                __data_load_start = LOADADDR (.data)
+                0x0000000000000f26                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x000000000080013b        0x0
+.noinit         0x000000000080016f        0x0
                 [!provide]                        PROVIDE (__noinit_start = .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end = .)
-                0x000000000080013b                _end = .
+                0x000000000080016f                _end = .
                 [!provide]                        PROVIDE (__heap_start = .)
 
 .eeprom         0x0000000000810000        0x0

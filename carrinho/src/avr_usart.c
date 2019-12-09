@@ -64,12 +64,8 @@ static int usart_putchar(char c, FILE *fp){
 	return 0;
 }
 
-//ISR(USART_RX_vect){
-//
-//
-//
-//
-//}
+ISR(USART_RX_vect){
+}
 
 ISR(USART_TX_vect){
 

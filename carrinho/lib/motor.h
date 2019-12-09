@@ -1,17 +1,23 @@
 /*
  * motor.h
  *
- *  Created on: 22 de out de 2019
- *      Author: jefferson
+ *  Created on: 7 de out de 2019
+ *      Author: Marcelo
  */
 
-#ifndef LIB_MOTOR_H_
-#define LIB_MOTOR_H_
+#ifndef MOTOR_H_
+#define MOTOR_H_
 
-void set_dutty(uint8_t dutty);
+void timer_pwm_init();
 
-void timer0_pwm_hardware_init();
+void frente(uint8_t dutty_esq, uint8_t dutty_dir);
 
-void timer2_pwm_hardware_init();
+void reh(uint8_t dutty_esq, uint8_t dutty_dir);
 
-#endif /* LIB_MOTOR_H_ */
+void direita(uint8_t dutty_esq, uint8_t dutty_dir);
+
+void esquerda(uint8_t dutty_esq, uint8_t dutty_dir);
+
+void stop();
+
+#endif /* MOTOR_H_ */

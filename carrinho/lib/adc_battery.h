@@ -9,11 +9,11 @@
 #define LIB_ADC_BATTERY_H_
 
 #define v_min 0.0
-#define const_adc0_10bit 0.017034566 // multiplicar const pelo valor do ADC resultara no valor da bateria
-#define const_adc1_10bit 0.007324218 // vbat = ((15/2)/1024)*ADC1 relacao do ganho do ampop para o ADC
+//#define const_adc0_10bit 0.017034566 // multiplicar const pelo valor do ADC resultara no valor da bateria
+//#define const_adc1_10bit 0.007324218 // vbat = ((15/2)/1024)*ADC1 relacao do ganho do ampop para o ADC
 
-//#define const_adc1_10bit 0.004882812
-//#define const_adc0_10bit 0.004882812
+#define const_adc1_10bit 0.004882812
+#define const_adc0_10bit 0.004882812
 
 typedef volatile enum adc_channels{
 	ADC0, ADC1

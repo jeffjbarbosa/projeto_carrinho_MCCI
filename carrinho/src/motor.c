@@ -1,10 +1,9 @@
 /*
  * motor.c
  *
- *  Created on: 22 de out de 2019
- *      Author: jefferson
+ *  Created on: 7 de out de 2019
+ *      Author: Marcelo
  */
-
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -13,58 +12,72 @@
 #include "../lib/avr_gpio.h"
 #include "../lib/motor.h"
 
-void set_dutty(uint8_t dutty){
 
-	if (dutty <= TIMER_0->OCRA)
-		TIMER_0->OCRB = dutty;
+void timer_pwm_init(){
 
-	if (dutty <= TIMER_2->OCRA)
-			TIMER_2->OCRB = dutty;
+		/* PD3 (pino OC2B), PD5 (pino OC0B) e PD6 (pino OC0A) como saída */
+		GPIO_D->DDR |= SET(PD3) | SET(PD5) | SET(PD6);
+		/* PB3: pino OC2A como saída */
+		GPIO_B->DDR |= SET(PB3);
+
+		/* WGM01 e WGM00 setados no Timer_0: modo PWM rápido com TOP em 0XFF */
+		TIMER_0->TCCRA = SET(WGM01) | SET(WGM00);
+		/* CS00 e CS01 setados no Timer_0: prescaler = 64 */
+		TIMER_0->TCCRB = SET(CS00)  | SET(CS01);
+
+		/* WGM02, WGM01 WGM00 setados no Timer_2: modo PWM rápido com TOP em 0XFF */
+		TIMER_2->TCCRA = SET(WGM21) | SET(WGM20);
+		/* CS22 setado no Timer_2: prescaler = 64 */
+		TIMER_2->TCCRB = SET(CS22);
+
 }
 
-void timer0_pwm_hardware_init(){
+void frente(uint8_t dutty_esq, uint8_t dutty_dir){
 
-	/* PD5: pino OC0B como saida */
-	GPIO_D->DDR |= SET(PD5);
+	TIMER_0->TCCRA = 0b10000011;
+	TIMER_2->TCCRA = 0b10000011;
+	TIMER_0->OCRA  = dutty_esq;
+	TIMER_0->OCRB  = 0;
+	TIMER_2->OCRA  = dutty_dir;
+	TIMER_2->OCRB  = 0;
 
-	/* Table 15-6.  Compare Output Mode, Fast PWM Mode */
-	/* COM0B1   COM0B0  Desc:
-	    0       0       Normal port operation, OC0B disconnected.
-	    0       1       Reserved
-	    1       0       Clear OC0B on Compare Match, set OC0B at BOTTOM (non-inverting mode)
-	    1       1       Set OC0B on Compare Match, clear OC0B at BOTTOM (inverting mode).*/
-
-	/* WGM02, WGM01 WGM00 setados: modo PWM rápido com TOP em OCRA */
-	TIMER_0->TCCRA = SET(WGM01) | SET(WGM00) | SET(COM0B1);
-	TIMER_0->TCCRB = SET(WGM02) | SET(CS01) | SET(CS00);
-	//CLR(CS02)
-
-	/* OCRA define frequência do PWM */
-	TIMER_0->OCRA = 124;
-
-	/* OCRB define razão cíclica:  OCRB / OCRA */
-	TIMER_0->OCRB = 150;
 }
 
-void timer2_pwm_hardware_init(){
+void reh(uint8_t dutty_esq, uint8_t dutty_dir){
 
-	/* PD3: pino OC2B como saida */
-	GPIO_D->DDR |= SET(PD3);
+	TIMER_0->TCCRA = 0b00100011;
+	TIMER_2->TCCRA = 0b00100011;
+	TIMER_0->OCRA  = 255;
+	TIMER_0->OCRB  = dutty_esq;
+	TIMER_2->OCRA  = 255;
+	TIMER_2->OCRB  = dutty_dir;
 
-	/* Table 15-6.  Compare Output Mode, Fast PWM Mode */
-	/* COM0B1   COM0B0  Desc:
-	    0       0       Normal port operation, OC0B disconnected.
-	    0       1       Reserved
-	    1       0       Clear OC0B on Compare Match, set OC0B at BOTTOM (non-inverting mode)
-	    1       1       Set OC0B on Compare Match, clear OC0B at BOTTOM (inverting mode).*/
+}
 
-	/* WGM02, WGM01 WGM00 setados: modo PWM rápido com TOP em OCRA */
-	TIMER_2->TCCRA = SET(WGM21) | SET(WGM20) | SET(COM2B1);
-	TIMER_2->TCCRB = SET(WGM22) | SET(CS21) | SET(CS20);
-	//CLR(CS22)
-	/* OCRA define frequência do PWM */
-	TIMER_2->OCRA = 249;
+void direita(uint8_t dutty_esq, uint8_t dutty_dir){
 
-	/* OCRB define razão cíclica:  OCRB / OCRA */
-	TIMER_2->OCRB = 150;
+	TIMER_0->TCCRA = 0b10000011;
+	TIMER_2->TCCRA = 0b00100011;
+	TIMER_0->OCRA  = dutty_esq;
+	TIMER_0->OCRB  = 0;
+	TIMER_2->OCRA  = 255;
+	TIMER_2->OCRB  = dutty_dir;
+
+}
+
+void esquerda(uint8_t dutty_esq, uint8_t dutty_dir){
+
+	TIMER_0->TCCRA = 0b00100011;
+	TIMER_2->TCCRA = 0b10000011;
+	TIMER_0->OCRA  = 255;
+	TIMER_0->OCRB  = dutty_esq;
+	TIMER_2->OCRA  = dutty_dir;
+	TIMER_2->OCRB  = 0;
+
+}
+void stop(){
+	TIMER_0->OCRA  = 0;
+	TIMER_0->OCRB  = 0;
+	TIMER_2->OCRA  = 0;
+	TIMER_2->OCRB  = 0;
 }
