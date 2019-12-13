@@ -1,2 +1,3 @@
-# projeto_carrinho_MCCI
+# Projeto Carrinho da disciplina de microcontroladores I
+
  
